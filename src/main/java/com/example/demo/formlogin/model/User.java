@@ -15,17 +15,24 @@ public class User {
     private String username;
     private String password;
 
-    @ElementCollection
-    private List<String> roles = new ArrayList<>();
+    private String roles;
 
     public User() {
     }
 
-    public User(Long id, String username, String password, List<String> roles) {
+    public User(Long id, String username, String password, String roles) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.roles = roles;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -44,11 +51,11 @@ public class User {
         this.password = password;
     }
 
-    public List<String> getRoles() {
+    public String getRoles() {
         return roles;
     }
 
-    public void setRoles(List<String> roles) {
+    public void setRoles(String roles) {
         this.roles = roles;
     }
 }

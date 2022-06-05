@@ -27,7 +27,7 @@ public class DBSeeder implements ApplicationRunner {
         // Podejrzyj, jak hasło wygląda w bazie
         String janPasswordBcrypted = passwordEncoder.encode("kowalski");
         String adamPasswordBcrypted = passwordEncoder.encode("nowak");
-        userRepository.save(new User(1L,"jan", janPasswordBcrypted, List.of("ROLE_USER")));
-        userRepository.save(new User(2L, "adam", adamPasswordBcrypted, List.of("ROLE_ADMIN")));
+        userRepository.save(new User(1L,"jan", janPasswordBcrypted, "ROLE_USER"));
+        userRepository.save(new User(2L, "adam", adamPasswordBcrypted,"ROLE_ADMIN"));
     }
 }
